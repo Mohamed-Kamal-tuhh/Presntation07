@@ -1,0 +1,39 @@
+ @prefix Process: <http://www.owl-ontologies.com/Process#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+Process: a owl:Ontology ;
+    dc:description "Ontology code created by Chowlk" .
+
+Process:LaserPower a owl:Class ;
+    rdfs:label "Laser Power" ;
+    rdfs:subClassOf Process:AM .
+
+Process:ScanSpeed a owl:Class ;
+    rdfs:label "Scan Speed" ;
+    rdfs:subClassOf Process:AM .
+
+Process:generate a owl:ObjectProperty ;
+    rdfs:label "generate" ;
+    rdfs:domain Process:AM ;
+    rdfs:range Process:Part .
+
+Process:hasquality a owl:ObjectProperty ;
+    rdfs:label "hasquality" ;
+    rdfs:domain Process:Part ;
+    rdfs:range Process:FatigueStrength,
+        Process:Yield .
+
+Process:FatigueStrength a owl:Class ;
+    rdfs:label "Fatigue Strength" .
+
+Process:Yield a owl:Class ;
+    rdfs:label "Yield" .
+
+Process:Part a owl:Class ;
+    rdfs:label "Part" .
+
+Process:AM a owl:Class ;
+    rdfs:label "A M" .
+
